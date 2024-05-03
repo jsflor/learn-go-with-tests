@@ -19,3 +19,18 @@ func SumAll(args ...[]int) []int {
 
 	return sums
 }
+
+func SumAllTails(args ...[]int) []int {
+	var sums []int
+
+	for _, arg := range args {
+		if len(arg) == 0 {
+			sums = append(sums, 0)
+			continue
+		}
+		tail := arg[1:]
+		sums = append(sums, Sum(tail))
+	}
+
+	return sums
+}
